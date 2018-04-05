@@ -1,41 +1,41 @@
-(deffacts Work-facts
-(education yes)
-(exp 2)
-(degree no)
+(deffacts pogoda
+(uroven_vodi visokiy)
+(dozhdi silnie)
+(pogoda teplaya)
+(sneg mnogo)
 )
 
-(defrule education_no
-(education no)
+(defrule budet_navodnenie
+(uroven_vodi visokiy)
+(dozhdi silnie)
+(pogoda teplaya)
+(sneg mnogo)
 =>
-(printout t "not accepted" crlf)	
+(printout t "spapaites, budet navodnenie!!!!" crlf)	
 )) 
 
-(defrule exp_no
-(exp ?exp)
+(defrule nebudet_navodnenie1
+(uroven_vodi nizkiy)
 =>
-(if (< ?exp 1)  			
-then
-(printout t "not accepted" crlf)	
+(printout t "vse ok, navodneniya ne budet" crlf)	
 )) 
 
-(defrule accept_researcher
-(education yes)
-(degree yes) 
-(exp ?exp)
+(defrule nebudet_navodnenie2
+(dozhdi slabie)
 =>
-(if (> ?exp 1)  			
-then
-(printout t "accepted researcher" crlf)	
-))
+(printout t "vse ok, navodneniya ne budet" crlf)	
+)) 
 
-(defrule accept_engineer
-(education yes)
-(degree no) 
-(exp ?exp)
+(defrule nebudet_navodnenie3
+(pogoda holodnaya)
 =>
-(if (> ?exp 1)  			
-then
-(printout t "accepted engineer" crlf)	
-))
+(printout t "vse ok, navodneniya ne budet" crlf)	
+)) 
+
+(defrule nebudet_navodnenie4
+(sneg malo)
+=>
+(printout t "vse ok, navodneniya ne budet" crlf)	
+)) 
 
 
