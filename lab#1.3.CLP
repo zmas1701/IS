@@ -1,0 +1,27 @@
+         CLIPS (6.30 3/17/15)
+CLIPS> (deftemplate Recruitment
+(slot education))
+CLIPS> (deffacts Education facts
+(higher education no)
+(defrule rule numberone
+=>(printout t refusing))
+(defrule rule numbertwo
+(or
+(higher education yes)
+(more than a year worked in the specialty))
+=>(printout t compliance))
+(defrule numberthree 
+(or 
+(higher education yes)
+(less than a year worked in the specialty))
+=>(printout t refusing))
+(defrule rule numberfour
+(or
+(higher education yes)
+(he has Ph.D))
+=>(printout t compliance and researcher))
+(defrule rulenumberfive
+(or
+(higher education yes)
+(he hasn't Ph.D))
+=>(printout t complience and engineer))
