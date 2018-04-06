@@ -1,0 +1,62 @@
+(deftemplate Rating
+		(slot strength)
+		(slot endurance)
+		(slot agility)
+		(slot charisma)
+		(slot luck)
+		(slot learnability)
+)
+(deffacts Allfacts
+		(Rating (strength 6))
+		(Rating (endurance 7))
+		(Rating (agility 4))
+		(Rating (charisma 5))
+		(Rating (luck 8))
+		(Rating (learnability 32))
+	
+	
+
+(defrule sum-rating
+	(rating (strength ?strengt) (endurance ?endurance) (agility ?agility) (cherisma ?charisma) (lick ?luck) (learnability ?learnability)
+=>
+(assert (add-to-sum (+ ?strengt ?endurance ?agility ?charisma ?luck ?learnability))))
+(defrule sum-rating
+	?sum <- (sum ?total)
+	?new-rating <- (add-to-sum ?area)
+	=>
+	(retract ?sum ?new-rating))))
+
+/////////далее надо указать сумму всех параметров и задать количественный рейтинг для каждого воинского звания.
+											просуммировать и получить звание. не успел разобраться. ///////////////
+
+
+(defrule Novobranec
+=> (printout t  Novobranec crlf)       
+)
+(defrule Ryadovoy
+=> (printout t  Ryadovoy crlf) 
+)
+(defrule Sergant
+        
+=> (printout t Sergant crlf)
+)
+(defrule Prapor
+       
+=> (printout t Prapor crlf)
+)
+(defrule Oficer
+        
+=> (printout t Oficer crlf)
+)
+(defrule Polkovnik
+      
+=> (printout t Polkovnik crlf)
+)
+(defrule General
+        
+=> (printout t General crlf)
+)
+(defrule Glavnokomandyushiy
+       
+=> (printout t Glavnokomandyushiy crlf)
+)
