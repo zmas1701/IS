@@ -1,0 +1,65 @@
+(deftemplate Object
+         (slot luk)
+         (slot stvol)
+         (slot kuzov)
+		     (slot dverza)
+		     (slot kolesa)				
+(deffacts Allfacts 
+				(Object (luk yes))
+				(Object (stvol yes))
+				(Object (kuzov yes))
+(defrule Tank
+				(Object (luk yes))
+				(Object (kuzov yes))
+				(Object (stvol yes))
+=> (printout t Tank crlf)
+)
+(defrule Car
+				(or
+							(Object (dverza yes))
+			           		(Object (kolesa yes))
+							(Object (kuzov yes))
+					)
+					=> (printout t Car crlf)
+)
+
+
+
+///////////или второй вариант////////
+
+
+
+(deftemplate Object
+         (slot luk)
+         (slot stvol)
+         (slot kuzov)
+		     (slot dverza)
+		     (slot kolesa)
+)
+(defrule Tank
+			(Object (luk yes))
+			(Object (stvol yes))
+			(Object (kuzov yes))
+			(Object (dverza no))
+			(Object kolesa no))
+=> (printout t Tank crlf)
+)
+(defrule Car
+			Object (luk no))
+			(Object (stvol no))
+			(Object (kuzov yes))
+			(Object (dverza yes))
+			(Object kolesa yes))
+=> (printout t Car crlf)
+			
+(deffacts Allfacts
+			(Object (luk no))
+			(Object (stvol no))
+			(Object (kuzov yes))
+			(Object (dverza yes))
+			(Object kolesa yes))
+)
+	
+	
+	
+	
