@@ -1,0 +1,54 @@
+(deffacts zarplata
+(end_mounth yes)
+(middle_mounth yes)
+(uvolen no)
+)
+
+(defrule budet_zp
+(end_mounth yes)
+(uvolen no)
+=>
+(printout t "Budet ZP" crlf)	
+)) 
+
+(defrule budet_ZP
+(middle_mounth yes)
+(uvolen no)
+=>
+(printout t "Budet Avans" crlf)	
+)) 
+
+(defrule nebudet_no
+(middle_mounth no)
+(uvolen no)
+=>
+(printout t "nechego ne budet" crlf)	
+)) 
+
+(defrule nebudet_no
+(middle_mounth no)
+(uvolen yes)
+=>
+(printout t "nechego ne budet" crlf)	
+)) 
+
+(defrule budet_ZP
+(end_mounth yes)
+(uvolen yes)
+=>
+(printout t "Budet Avans" crlf)	
+)) 
+
+(defrule nebudet_no
+(end_mounth no)
+(uvolen no)
+=>
+(printout t "nechego ne budet" crlf)	
+)) 
+
+(defrule nebudet_no
+(end_mounth no)
+(uvolen yes)
+=>
+(printout t "nechego ne budet" crlf)	
+)) 
