@@ -1,0 +1,104 @@
+(deftemplate DOG 
+		(slot Training)
+		(slot Agility)
+		(slot Kindness)
+		(slot Intelligents)
+		(slot Size)
+		(slot Molting)
+)
+(defrule Sheepdog
+   =>
+		(printout t "Do you need a well trained dog yes/no?: ")
+		(bind ?response (read))
+		(assert (DOG (Training ?response)))
+)
+(defrule Beagle
+   =>
+		(printout t "Do you need an active dog yes/no?: ")
+		(bind ?response (read))
+		(assert (DOG (Agility ?response)))
+)
+(defrule Labrador
+   =>
+		(printout t "Do you need a kindness dog yes/no?: ")
+		(bind ?response (read))
+		(assert (DOG (Kindness ?response)))
+)
+(defrule Doberman
+   =>
+		(printout t "Do you need an aintelligent dog yes/no?: ")
+		(bind ?response (read))
+		(assert (DOG (Intelligent ?response)))
+)
+(defrule Siba inu
+   =>
+		(printout t "Do you need a small dog yes/no?: ")
+		(bind ?response (read))
+		(assert (DOG (Small ?response)))
+)
+(defrule Cane Corso
+   =>
+		(printout t "Are you ready to endure molting yes/no?: ")
+		(bind ?response (read))
+		(assert (DOG (Molting ?response)))
+)
+
+
+(defrule Sheepdog
+		(Training yes)
+		(Agility yes)
+		(Kindness yes)
+		(Intelligents yes)
+		(Size no)
+		(Molting no)
+	=>
+		(printout t "Your  choise is Sheepdog" crlf)
+)
+
+
+(defrule Beagle
+		(Training no)
+		(Agility yes)
+		(Kindness yes)
+		(Intelligents no)
+		(Size yes)
+		(Molting no)
+	=>
+		(printout t "Your  choise is Beagle" crlf)
+)
+
+
+(defrule Labrador
+		(Training yes)
+		(Agility no)
+		(Kindness yes)
+		(Intelligents no)
+		(Size no)
+		(Molting no)
+	=>
+		(printout t "Your  choise is Labrador" crlf)
+)
+
+
+(defrule Doberman
+		(Training yes)
+		(Agility no)
+		(Kindness no)
+		(Intelligents yes)
+		(Size no)
+		(Molting no)
+	=>
+		(printout t "Your  choise is Doberman" crlf)
+)
+
+
+(defrule Siba inu
+		(Training no)
+		(Agility no)
+		(Kindness no)
+		(Intelligents no)
+		(Size yes)
+		(Molting no)
+	=>
+		(printout t "Your  choise is Siba inu" crlf)
+)
