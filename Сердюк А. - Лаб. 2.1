@@ -10,37 +10,37 @@
    =>
 		(printout t "Do you need a well trained dog yes/no?: ")
 		(bind ?response (read))
-		(assert (DOG (Training ?response)))
+		(assert (Sheepdog (Training ?response)))
 )
 (defrule Beagle
    =>
 		(printout t "Do you need an active dog yes/no?: ")
 		(bind ?response (read))
-		(assert (DOG (Agility ?response)))
+		(assert (Beagle (Agility ?response)))
 )
 (defrule Labrador
    =>
 		(printout t "Do you need a kindness dog yes/no?: ")
 		(bind ?response (read))
-		(assert (DOG (Kindness ?response)))
+		(assert (Labrador (Kindness ?response)))
 )
 (defrule Doberman
    =>
 		(printout t "Do you need an aintelligent dog yes/no?: ")
 		(bind ?response (read))
-		(assert (DOG (Intelligent ?response)))
+		(assert (Doberman (Intelligent ?response)))
 )
 (defrule Siba inu
    =>
 		(printout t "Do you need a small dog yes/no?: ")
 		(bind ?response (read))
-		(assert (DOG (Small ?response)))
+		(assert (Siba inu (Small ?response)))
 )
 (defrule Cane Corso
    =>
 		(printout t "Are you ready to endure molting yes/no?: ")
 		(bind ?response (read))
-		(assert (DOG (Molting ?response)))
+		(assert (Cane Corso (Molting ?response)))
 )
 
 
@@ -101,4 +101,16 @@
 		(Molting no)
 	=>
 		(printout t "Your  choise is Siba inu" crlf)
+)
+
+
+(defrule Cane Corso
+		(Training yes)
+		(Agility no)
+		(Kindness no)
+		(Intelligents no)
+		(Size yes)
+		(Molting no)
+	=>
+		(printout t "Your  choise is Cane Corso" crlf)
 )
